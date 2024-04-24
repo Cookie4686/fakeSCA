@@ -5,43 +5,47 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Sarabun", sans-serif;
-  --primary: white;
-  --primary-opposite: black;
-  --yellow: #f5bf43;
-  --lightyellow: #f2f543;
-  --blue: #1d2152;
-  --lightblue: #1d2952;
-  --red: #e03837;
-  --green: hsl(115, 100%, 30%);
-  --lightgreen: hsl(115, 100%, 35%);
+	font-family: 'Sarabun', sans-serif;
+	--primary: white;
+	--primary-opposite: black;
+	--yellow: #f5bf43;
+	--lightyellow: #f2f543;
+	--blue: #1d2152;
+	--lightblue: #1d2952;
+	--red: #e03837;
+	--green: hsl(115, 100%, 30%);
+	--lightgreen: hsl(115, 100%, 35%);
 }
 
 br {
-  user-select: none;
+	user-select: none;
 }
 
 .btn {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1.5rem;
-  text-align: center;
-  text-decoration-line: none;
-  user-select: none;
-  border-width: 2px;
-  border-radius: 1rem;
-  border-color: transparent;
-  transition: all 0.3s;
-  background-color: var(--primary);
+	display: inline-flex;
+	min-height: 2.75rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0 1.5rem;
+	text-align: center;
+	text-decoration-line: none;
+	user-select: none;
+	border-width: 2px;
+	border-radius: 1rem;
+	border-color: transparent;
+	transition: all 0.3s;
+	background-color: var(--primary);
+}
+.btn:hover,
+.btn:focus {
+	scale: 1.05;
 }
 
 .btn-blue {
-  color: var(--blue);
-  border-color: var(--lightblue);
+	color: var(--blue);
+	border-color: var(--lightblue);
 }
 .btn-blue:hover {
-  color: var(--primary);
-  background-color: var(--blue);
+	color: var(--primary);
+	background-color: var(--blue);
 }
