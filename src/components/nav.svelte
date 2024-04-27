@@ -1,46 +1,66 @@
-<nav class="flex fixed h-20 w-full p-4 z-10">
-	<input type="checkbox" class="hidden" id="menubtn" />
-	<!-- Logo & NavButton -->
-	<div class="logo relative w-full h-12 flex items-center">
-		<div class="flex items-center h-full select-none">
-			<img
-				src="/src/public/SCAlogo2023_small.png"
-				alt="SCA logo"
-				class="h-full"
-				draggable="false"
-			/>
-			<span class="px-4">Sammuk Christian Academy</span>
-		</div>
-		<label class="menubtn absolute right-0" for="menubtn">
-			<div class="bar1"></div>
-			<div class="bar2"></div>
-			<div class="bar3"></div>
-		</label>
-	</div>
+<script>
+  const links = [
+    {text:'Home',href:'/home/'},
+    {dropdown:true,text:'About',contents:[
+      {text:'Our vision',href:'/'},
+      {text:'School History',href:'/'},
+      {text:'Management Board',href:'/'}
+    ]},
+    {text:'Contact',href:'/contact/'},
+    {text:'Admission',href:'/'},
+    {text:'Others',dropdown:true,dropdown_end:true,contents:[
+      {text:'Albums',href:'/'},
+      {text:'Donate',href:'/donate/'},
+      {text:'Student Council',href:'/'}
+    ]},
+  ]
+</script>
 
+<nav class="flex fixed h-20 w-full p-4 z-10">
+	<input type="checkbox" id="menubtn" hidden/>
+	<!-- Logo-->
+	<div class="logo relative w-max h-12 flex items-center">
+    <div class="flex items-center h-full select-none">
+      <img
+      src="/src/public/SCAlogo2023_small.png"
+      alt="SCA logo"
+      class="h-full"
+      draggable="false"
+			/>
+			<span class="px-4 whitespace-nowrap">Sammuk Christian Academy</span>
+		</div>
+    <button class="menubtn absolute right-0">
+      <label for="menubtn">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+	</div>
 	<!-- Main Link -->
-	<ul class="link select-none hidden overflow-hidden">
-		<li><a href="/">Home</a></li>
-		<li><a href="/about/">About</a></li>
-		<li><a href="/">Contact</a></li>
-		<li><a href="/">Donate</a></li>
-		<li><a href="/">Student Council</a></li>
-		<li><a href="/">Albums</a></li>
-		<li><a href="/">Admission</a></li>
-		<!-- <li class="dropdown">
-      <button tabindex="0" class="dropdown-btn inline-flex items-center">
-        Services
-        <span class="dropdown-arrow ml-2">
-          <svg class="inline align-baseline" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 8v3.8l-6 4.6-6-4.6V8l6 4.6L18 8Z" fill="currentColor"></path></svg>
-        </span>
-      </button>
-      
-      <ul class="dropdown-content">
-        <li><a href="/service/">All Services</a></li>
-        <li><a href="/">Event Calendar</a></li>
-        <li><a href="/">Food Rating</a></li>
-      </ul>
-    </li> -->
+	<ul class="link select-none hidden">
+    {#each links as link}
+      {#if link.dropdown}
+        <li class="dropdown dropdown-bottom" class:dropdown-end={link.dropdown_end}>
+          <div role="button" tabindex="0" class="dropdown-btn">
+            <label class="flex cursor-pointer">
+              {link.text}
+              <input type="checkbox" hidden/>
+              <span class="dropdown-arrow">
+                <svg class="inline align-baseline" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 8v3.8l-6 4.6-6-4.6V8l6 4.6L18 8Z" fill="currentColor"></path></svg>
+              </span>
+            </label>
+          </div>
+          <ul class="dropdown-content z-[1] shadow w-max">
+            {#each link.contents as content}
+              <li><a href={content.href}>{content.text}</a></li>
+            {/each}
+          </ul>
+        </li>
+      {:else}
+        <li><a href={link.href}>{link.text}</a></li>
+      {/if}
+    {/each}
 	</ul>
 </nav>
 
@@ -49,59 +69,98 @@
 		background-color: black;
 		transition: all 0.4s;
 	}
-
-	nav .link a {
-		position: relative;
-	}
-	nav .link a::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		width: 0;
-		background-color: var(--yellow);
-		z-index: -1;
-		transition: width 0.5s;
-	}
-	nav .link a::after {
-		content: '';
-		position: absolute;
-		inset: auto auto -1px 0;
-		width: 0;
-		height: 1px;
-		background-color: var(--blue);
-		z-index: -1;
-		transition: width 0.25s;
-	}
-
-	nav .link a:focus {
-		outline-offset: 4px;
-	}
-
-	nav .link a:focus::before,
-	nav .link a:hover::after,
-	nav .link a:focus::after {
-		width: 100%;
-	}
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+  }
+  .dropdown:has(input:checked) .dropdown-content {
+    display: block;
+  }
+  .dropdown-arrow svg {
+    transition: 0.2s;
+  }
+  .dropdown:has(input:checked) .dropdown-arrow svg {
+    transform: rotate(180deg);
+    scale: 1.2;
+  }
+  @media all and (min-width:768px) {
+    .dropdown-content {
+      position: absolute;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      z-index: 1;
+      background-color: var(--primary);
+    }
+    .dropdown:has(input:checked) .dropdown-content,
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+    .dropdown:has(input:checked) .dropdown-arrow svg,
+    .dropdown:hover .dropdown-arrow svg,
+    .dropdown:focus .dropdown-arrow svg,
+    .dropdown:focus-within .dropdown-arrow svg {
+      transform: rotate(180deg);
+    }
+    .dropdown-bottom .dropdown-content {
+      bottom: auto;
+      top: 100%;
+      transform-origin: top;
+    }
+    .dropdown-end .dropdown-content {
+      inset-inline-end: 0px;
+    }
+    .dropdown-end .dropdown-content li {
+      display: flex;
+      justify-content: end;
+    }
+  }
+  @media all and (max-width:767px) {
+    .dropdown .dropdown-content li a {
+      font-size: 1rem;
+    }
+    .dropdown,
+    .dropdown:has(input:checked) .dropdown-content {
+      display: flex;
+      flex-wrap: wrap;
+			justify-content: center;
+			width: 100%;
+      gap: 1rem;
+    }
+  }
 
 	/* Tablet and Mobiles */
 	@media all and (max-width: 767px) {
 		nav {
 			color: white;
+      overflow: scroll;
 		}
-
+   .logo {
+      width: 100%;
+    }
+    .link li a, .link li.dropdown .dropdown-btn {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
 		nav:has(#menubtn:checked) {
 			height: 100%;
 			flex-wrap: wrap;
 			gap: 0;
 			align-content: flex-start;
 		}
-
 		nav:has(#menubtn:checked) .link {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 			width: 100%;
 			padding-top: 3rem;
+      gap: 1.5rem;
 			position: relative;
 		}
 		nav:has(#menubtn:checked) .link li {
@@ -110,21 +169,8 @@
 			justify-content: center;
 			flex-wrap: wrap;
 		}
-		nav:has(#menubtn:checked) .link li a {
-			font-size: 1.5rem;
-			text-align: center;
-			padding: 1rem 0;
-		}
 
 		/* Menu Button */
-		nav:has(#menubtn:checked) .menubtn .bar1 {
-			transform: translateY(calc(var(--menu-btn-size) * 0.25)) rotate(225deg);
-			background-color: var(--red);
-		}
-		nav:has(#menubtn:checked) .menubtn .bar3 {
-			transform: translateY(calc(var(--menu-btn-size) * -0.25)) rotate(-45deg);
-			background-color: var(--red);
-		}
 		.menubtn {
 			--menu-btn-size: 2rem;
 			cursor: pointer;
@@ -140,20 +186,24 @@
 		nav .menubtn .bar2 {
 			height: calc(var(--menu-btn-size) * 0.125);
 		}
+		nav:has(#menubtn:checked) .menubtn .bar1 {
+			transform: translateY(calc(var(--menu-btn-size) * 0.25)) rotate(225deg);
+			background-color: var(--red);
+		}
+		nav:has(#menubtn:checked) .menubtn .bar3 {
+			transform: translateY(calc(var(--menu-btn-size) * -0.25)) rotate(-45deg);
+			background-color: var(--red);
+		}
 	}
 
 	/* Desktop */
 	@media all and (min-width: 768px) {
 		nav {
+      justify-content: space-between;
 			background-color: transparent;
-		}
-		nav .logo {
-			width: 50%;
-			justify-content: start;
 		}
 		nav .link {
 			display: flex;
-			width: 50%;
 			justify-content: end;
 			align-items: center;
 			gap: 3rem;
@@ -170,72 +220,49 @@
 		}
 	}
 
-	/* Dropdown */
-	/* .dropdown-arrow {
-    display: flex;
-    transition: 0.2s;
-  }
-  .dropdown:hover .dropdown-arrow,
-  .dropdown:focus .dropdown-arrow,
-  .dropdown:focus-within .dropdown-arrow {
-    transform: rotate(180deg);
-  }
-  @media all and (max-width:767px){
-    #menubtn:checked ~ nav .dropdown-btn {
+  /* Desktop link animations */
+  @media all and (min-width: 768px) {
+    nav .link a {
+      position: relative;
+    }
+    nav .link a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 0;
+      background-color: var(--yellow);
+      z-index: -1;
+      transition: width 0.5s;
+    }
+    nav .link a::after {
+      content: '';
+      position: absolute;
+      inset: auto auto -1px 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--blue);
+      z-index: -1;
+      transition: width 0.25s;
+    }
+  
+    nav .link *:focus {
+      outline-offset: 4px;
+    }
+  
+    nav .link a:focus::before,
+    nav .link a:hover::after,
+    nav .link a:focus::after {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    #menubtn:checked ~ nav .dropdown-btn, .dropdown-content li {
-      font-size: 1.5rem;
-      text-align: center;
-      color: white;
-      padding: 1rem 0;
-    }
-    #menubtn:checked ~ nav .dropdown-btn {
-      position: relative;
-    }
-    .dropdown .dropdown-content {
-      height: 0;
-      overflow: hidden;
-      transition: all 0.6s;
-    }
-    .dropdown:focus .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-      height: 300px;
-    }
-    #menubtn:checked ~ nav .dropdown-arrow {
-      position: absolute;
-      right: 0;
     }
   }
-  @media all and (min-width:767px){
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown .dropdown-content {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-      transform-origin: top;
-      width: max-content;
-      padding: 1rem;
-      transition: all 0.3s;
-      border-radius: 10px;
-      background-color: white;
-      box-shadow: 5px 5px 15px #f2f2f2,-5px -5px 15px #fafafa;
-    }
-    .dropdown .dropdown-content > * {
-      padding: 0.5rem 0;
-    }
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-      visibility: visible;
-      opacity: 1;
-    }
+
+  /* Tablets & Mobile */
+  @media all and (max-width:767px){
+    nav:has(#menubtn:checked) .link li {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
   }
- */
-</style>
+ </style>

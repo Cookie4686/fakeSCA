@@ -5,7 +5,7 @@
 
 <div class="site">
 	<Nav></Nav>
-	<div class="page"><slot /></div>
+	<slot />
 	<Footer></Footer>
 </div>
 
@@ -15,11 +15,6 @@
 		display: grid;
 		grid-template-rows: 1fr auto;
 		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.page {
-		padding-top: 5rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		--navheight: 5rem;
 	}
 </style>
