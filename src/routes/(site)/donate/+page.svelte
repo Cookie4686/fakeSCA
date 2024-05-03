@@ -1,3 +1,22 @@
+<script>
+	import Slider from "../../../components/slider.svelte";
+
+  const cards1 = [
+    {id:1,zoom:false,src:'/src/images/donate/logo-krungthai.png',alt:'Krungthai logo',text:'โอนเข้าบัญชีธนาคารกรุงไทย<br/>ชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา<br/>เลขบัญชี: 464-6-00066-0'},
+    {id:2,zoom:true,src:'/src/images/donate/line-qr.png',alt:'Line QR',text:'ส่งหลักฐานการโอนเงินเพื่อขอรับใบเสร็จได้ทาง Line ID: scadonation พร้อมแนบ<br/>1.รูปบัตรประชาชน<br/>2.E-mail<br/>3.เบอร์โทรศัพท์'},
+    {id:3,zoom:false,src:'',alt:'',text:'หากส่งหลักฐานภายในวันที่โอน จะได้รับใบรับเงินบริจาคในวันรุ่งขึ้น'},
+    {id:4,zoom:false,src:'',alt:'',text:'หากไม่ได้รับใบรับเงินบริจาคภายใน 3 วันทำการหลังโอนเงิน สามารถสอบถามเข้ามาได้ทางไลน์ หรืออีเมล officer@sca.ac.th'},
+    {id:5,zoom:false,src:'/src/images/donate/logo-rd.png',alt:'Revenue Department logo',text:"ผู้บริจาคสามารถเข้าตรวจสอบด้วยตนเองได้ที่เว็บไซต์ของกรมสรรพากร <a href='https://epayapp.rd.go.th/rd-edonation/portal/for-donor' target='_blank'>https://epayapp.rd.go.th/rd-edonation/portal/for-donor</a>"},
+  ]
+  const cards2 = [
+    {id:1,zoom:false,src:'/src/images/donate/mobile-banking.png',alt:'',text:'เปิดใช้งาน App Mobile Banking ของท่าน'},
+    {id:2,zoom:true,src:'/src/images/donate/promtpay-qr.png',alt:'',text:'เลือกเมนูสแกน และ สแกน QR Code<br/>(กดที่รูปเพื่อ zoom)'},
+    {id:3,zoom:false,src:'',alt:'',text:'เมื่อพบข้อความ<br/>ให้ธนาคารที่เกี่ยวข้องเปิดเผยข้อมูลรายการนี้ให้แก่กรมสรรพากร และ/หรือหน่วยรับบริจาคเพื่อการใช้สิทธิลดหย่อนภาษี<br/>ให้กดเลือกยอมรับ'},
+    {id:4,zoom:false,src:'',alt:'',text:'ตรวจสอบ<br/>ชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา<br/>หรือ<br/>เป๋าตุง เติมบุญ<br/>เลขผู้เสียภาษี: 0994000150822'},
+    {id:5,zoom:false,src:'',alt:'',text:'ระบุลงในบันทึกว่า "บริจาคเพื่อการศึกษา"<br/>ระบุจำนวนเงินและกดยืนยัน'},
+    ]
+</script>
+
 <svelte:head>
 	<title>Donate</title>
 </svelte:head>
@@ -13,54 +32,19 @@
     </div>
   </header>
   <main>
-    <!-- <section>
+    <section>
       <h2>บริจาคผ่านการโอนเข้าบัญชีธนาคารกรุงไทย</h2>
-      <div class="cards py-4">
-        <div class="card">
-          โอนเข้าบัญชีธนาคารกรุงไทย <br>ชื่อบัญชี:โรงเรียนสามมุกคริสเตียนวิทยา<br>เลขบัญชี:464-6-00066-0
-        </div>
-        <div class="card">
-          ส่งหลักฐานการโอนเงินเพื่อขอรับใบเสร็จได้ทาง <br>Line ID: scadonation<br>พร้อมแนบ
-        </div>
-        <div class="card">
-          1.รูปบัตรประชาชน
-          2.E-mail
-          3.เบอร์โทรศัพท์
-        </div>
-      </div>
-    </section> -->
+      <Slider num='1' cards={cards1}></Slider>
+    </section>
     <section>
       <h2>บริจาคผ่านการสแกน QR Code PromtPay</h2>
-      <div class="slider py-4">
-        <div class="cards">
-          <div class="card">
-            QR
-          </div>
-          <div class="card">
-            เปิดใช้งาน App Mobile Banking ของท่าน
-          </div>
-          <div class="card">
-            เลือกเมนูสแกน และ สแกน QR Code
-          </div>
-          <div class="card">
-            เมื่อพบข้อความ ให้ธนาคารที่เกี่ยวข้องเปิดเผยข้อมูลรายการนี้ให้แก่กรมสรรพากร และ/หรือหน่วยรับบริจาคเพื่อการใช้สิทธิลดหย่อนภาษี
-          </div>
-          <div class="card">
-            ตรวจสอบชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา หรือ เป๋าตุง เติมบุญ
-            เลขผู้เสียภาษี: 0994000150822
-          </div>
-          <div class="card">
-            ระบุลงในบันทึกว่า "บริจาคเพื่อการศึกษา" ระบุจำนวนเงินและกดยืนยัน
-          </div>
-        </div>
-        <div class="control">
-          <input type="radio" name="cards" id="card1" checked>
-          <input type="radio" name="cards" id="card2">
-          <input type="radio" name="cards" id="card3">
-          <input type="radio" name="cards" id="card4">
-          <input type="radio" name="cards" id="card5">
-          <input type="radio" name="cards" id="card6">
-        </div>
+      <Slider num='2' cards={cards2}></Slider>
+    </section>
+    <section>
+      <h2 class="thank">Thank You!</h2>
+      <p class="thank-text">ขอบคุณทุกท่านที่ให้การสนับสนุนพันธกิจของโรงเรียนสามมุกคริสเตียนวิทยา<br/>เงินบริจาคของท่านจะถูกนำไปใช้เพื่อพัฒนาโรงเรียนโดยคำนึงถึงประโยชน์ของนักเรียนและผู้ปกครองเป็นหลัก</p>
+      <div class="flex justify-center">
+        <p style="max-width: 500px;">หมายเหตุ:<br/>ผู้ที่บริจาคสนับสนุนการศึกษา เพื่อใช้สิทธิ์ลดหย่อนภาษี 2 เท่า<br/>จะต้องบริจาคผ่าน ระบบบริจาคอิเล็กทรอนิกส์ (2 ช่องทางข้างต้น) เท่านั้น<br/>และลดหย่อนได้ตามที่จ่ายจริง แต่ไม่เกิน 10% ของรายได้หลังหักค่าใช้จ่าย และค่าลดหย่อนอื่นๆที่ไม่ใช่เงินบริจาค</p>
       </div>
     </section>
   </main>
@@ -78,7 +62,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url(/src/images/bg_donate.jpg) no-repeat center top;
+    background: url(/src/images/donate/bg_donate.jpg) no-repeat center top;
     background-size: cover;
     opacity: 0.15;
   }
@@ -97,47 +81,24 @@
   }
 
   main {
-    padding: 2.5rem 0;
+    padding-top: 2.5rem;
     text-align: center;
   }
+  section {
+    margin-bottom: 6rem;
+  }
+
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 0.75rem;
   }
-  .slider {
-    display: block;
-    padding: 5%;
+  .thank {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
-  .cards {
-    display: flex;
-    justify-content: center;
-  }
-  .card {
-    display: none;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: center;
-    width: 300px;
-    height: 480px;
-    border: 3px solid black;
-    border-radius: 15px;
-  }
-  .slider:has(#card1:checked) .cards .card:nth-child(1) {
-    display: flex;
-  }
-  .slider:has(#card2:checked) .cards .card:nth-child(2) {
-    display: flex;
-  }
-  .slider:has(#card3:checked) .cards .card:nth-child(3) {
-    display: flex;
-  }
-  .slider:has(#card4:checked) .cards .card:nth-child(4) {
-    display: flex;
-  }
-  .slider:has(#card5:checked) .cards .card:nth-child(5) {
-    display: flex;
-  }
-  .slider:has(#card6:checked) .cards .card:nth-child(6) {
-    display: flex;
+  .thank-text {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
   }
 </style>

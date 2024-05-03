@@ -17,7 +17,9 @@
 
 	<div class="contact pt-12">
 		<p class="font-bold text-xl">Contact Us</p>
-		<Media></Media>
+		<div class="py-4">
+			<Media></Media>
+		</div>
 		<div class="pt-4 text-sm">
 			<p class="text-base font-bold">Sammuk Christian Academy</p>
 			<p>166 Bangsane-Angsila Road, Sansuk Sub-district, Muang District, Chonburi, 20130</p>

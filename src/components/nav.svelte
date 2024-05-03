@@ -45,7 +45,7 @@
           <div role="button" tabindex="0" class="dropdown-btn">
             <label class="flex cursor-pointer">
               {link.text}
-              <input type="checkbox" hidden/>
+              <input type="checkbox" name="dropdown" hidden/>
               <span class="dropdown-arrow">
                 <svg class="inline align-baseline" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 8v3.8l-6 4.6-6-4.6V8l6 4.6L18 8Z" fill="currentColor"></path></svg>
               </span>
@@ -87,7 +87,7 @@
     transform: rotate(180deg);
     scale: 1.2;
   }
-  @media all and (min-width:768px) {
+  @media all and (min-width:1049px) {
     .dropdown-content {
       position: absolute;
       border-radius: 0.5rem;
@@ -120,7 +120,7 @@
       justify-content: end;
     }
   }
-  @media all and (max-width:767px) {
+  @media all and (max-width:1050px) {
     .dropdown .dropdown-content li a {
       font-size: 1rem;
     }
@@ -135,10 +135,9 @@
   }
 
 	/* Tablet and Mobiles */
-	@media all and (max-width: 767px) {
+	@media all and (max-width: 1049px) {
 		nav {
 			color: white;
-      overflow: scroll;
 		}
    .logo {
       width: 100%;
@@ -147,6 +146,9 @@
       font-size: 1.5rem;
       text-align: center;
       padding: 0.5rem 0;
+    }
+    nav:has(#menubtn:checked) {
+      overflow: scroll;
     }
 		nav:has(#menubtn:checked) {
 			height: 100%;
@@ -197,7 +199,7 @@
 	}
 
 	/* Desktop */
-	@media all and (min-width: 768px) {
+	@media all and (min-width: 1050px) {
 		nav {
       justify-content: space-between;
 			background-color: transparent;
@@ -221,7 +223,7 @@
 	}
 
   /* Desktop link animations */
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1050px) {
     nav .link a {
       position: relative;
     }
@@ -245,8 +247,8 @@
       transition: width 0.25s;
     }
   
-    nav .link *:focus {
-      outline-offset: 4px;
+    nav .link a:focus {
+      outline: none;
     }
   
     nav .link a:focus::before,
@@ -257,7 +259,7 @@
   }
 
   /* Tablets & Mobile */
-  @media all and (max-width:767px){
+  @media all and (max-width:1049px){
     nav:has(#menubtn:checked) .link li {
 			width: 100%;
 			display: flex;

@@ -1,5 +1,4 @@
 <script>
-	import Slider from "../../../components/slider.svelte";
 </script>
 
 <svelte:head>
@@ -48,10 +47,6 @@
 	.page {
     padding-top: var(--navheight);
   }
-	header {
-		padding-top: 0;
-		min-height: 100vh;
-	}
 	section {
 		padding-bottom: 2.5rem;
 	}

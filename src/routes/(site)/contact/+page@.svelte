@@ -14,12 +14,14 @@
       <h1>ติดต่อเรา</h1>
     </header>
     <main>
-      <section class="pb-10">
+      <section>
         <h2>ช่องทางออนไลน์</h2>
         <div>
-          <Media></Media>
           <p>อีเมล์: officer@sca.ac.th</p>
           <p>โทรศัพท์: 081-432-9799 | 038-398-316</p>
+          <div class="pt-8">
+            <Media></Media>
+          </div>
         </div>
       </section>
       <section>
@@ -28,7 +30,7 @@
           <p>จันทร์-เสาร์ | 8:00-17:00 น.</p>
           <p>* ปิดทำการวันอาทิตย์และทุกวันหยุดนักขัตฤกษ์</p>
         </div>
-        <div class="py-4">
+        <div class="pt-4">
           <p>166 ถนน บางแสน-อ่างศิลา ตำบลแสนสุข อำเภอเมืองชลบุรี ชลบุรี 20130</p>
         </div>
       </section>
@@ -81,19 +83,23 @@
     opacity: 0.15;
   }
   header {
-    min-height: 33vh;
-    position: relative;
+    min-height: 25vh;
+    padding-top: var(--navheight);
   }
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
   }
   main {
-    padding: 3rem 0;
+    margin-top: 4.5rem;
     text-align: center;
   }
+  section {
+    margin-bottom: 4.5rem;
+  }
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 </style>
