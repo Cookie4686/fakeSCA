@@ -23,7 +23,7 @@
 	<div class="logo relative w-max h-12 flex items-center">
     <div class="flex items-center h-full select-none">
       <img
-      src="/src/public/SCAlogo2023_small.png"
+      src="/SCAlogo2023_small.png"
       alt="SCA logo"
       class="h-full"
       draggable="false"

@@ -9,7 +9,7 @@
 <main>
 	<div class="flex justify-center">
 		<div class="logo flex justify-center items-center">
-			<img src="/src/public/SCAlogo2023.png" alt="SCA logo" draggable="false" class="select-none" />
+			<img src="/SCAlogo2023.png" alt="SCA logo" draggable="false" class="select-none" />
 		</div>
 	</div>
 	<div class="flex justify-center">
@@ -31,7 +31,7 @@
 	main {
 		min-height: 100vh;
 		padding-top: 5vh;
-		background: #1d2152 url(/src/public/bg.svg) no-repeat center bottom;
+		background: #1d2152 url(/bg.svg) no-repeat center bottom;
 		background-size: cover;
 		color: white;
 	}

@@ -2,15 +2,15 @@
 	import Slider from "../../../components/slider.svelte";
 
   const cards1 = [
-    {id:1,zoom:false,src:'/src/images/donate/logo-krungthai.png',alt:'Krungthai logo',text:'โอนเข้าบัญชีธนาคารกรุงไทย<br/>ชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา<br/>เลขบัญชี: 464-6-00066-0'},
-    {id:2,zoom:true,src:'/src/images/donate/line-qr.png',alt:'Line QR',text:'ส่งหลักฐานการโอนเงินเพื่อขอรับใบเสร็จได้ทาง Line ID: scadonation พร้อมแนบ<br/>1.รูปบัตรประชาชน<br/>2.E-mail<br/>3.เบอร์โทรศัพท์'},
+    {id:1,zoom:false,src:'/donate/logo-krungthai.png',alt:'Krungthai logo',text:'โอนเข้าบัญชีธนาคารกรุงไทย<br/>ชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา<br/>เลขบัญชี: 464-6-00066-0'},
+    {id:2,zoom:true,src:'/donate/line-qr.png',alt:'Line QR',text:'ส่งหลักฐานการโอนเงินเพื่อขอรับใบเสร็จได้ทาง Line ID: scadonation พร้อมแนบ<br/>1.รูปบัตรประชาชน<br/>2.E-mail<br/>3.เบอร์โทรศัพท์'},
     {id:3,zoom:false,src:'',alt:'',text:'หากส่งหลักฐานภายในวันที่โอน จะได้รับใบรับเงินบริจาคในวันรุ่งขึ้น'},
     {id:4,zoom:false,src:'',alt:'',text:'หากไม่ได้รับใบรับเงินบริจาคภายใน 3 วันทำการหลังโอนเงิน สามารถสอบถามเข้ามาได้ทางไลน์ หรืออีเมล officer@sca.ac.th'},
-    {id:5,zoom:false,src:'/src/images/donate/logo-rd.png',alt:'Revenue Department logo',text:"ผู้บริจาคสามารถเข้าตรวจสอบด้วยตนเองได้ที่เว็บไซต์ของกรมสรรพากร <a href='https://epayapp.rd.go.th/rd-edonation/portal/for-donor' target='_blank'>https://epayapp.rd.go.th/rd-edonation/portal/for-donor</a>"},
+    {id:5,zoom:false,src:'/donate/logo-rd.png',alt:'Revenue Department logo',text:"ผู้บริจาคสามารถเข้าตรวจสอบด้วยตนเองได้ที่เว็บไซต์ของกรมสรรพากร <a href='https://epayapp.rd.go.th/rd-edonation/portal/for-donor' target='_blank'>https://epayapp.rd.go.th/rd-edonation/portal/for-donor</a>"},
   ]
   const cards2 = [
-    {id:1,zoom:false,src:'/src/images/donate/mobile-banking.png',alt:'',text:'เปิดใช้งาน App Mobile Banking ของท่าน'},
-    {id:2,zoom:true,src:'/src/images/donate/promtpay-qr.png',alt:'',text:'เลือกเมนูสแกน และ สแกน QR Code<br/>(กดที่รูปเพื่อ zoom)'},
+    {id:1,zoom:false,src:'/donate/mobile-banking.png',alt:'',text:'เปิดใช้งาน App Mobile Banking ของท่าน'},
+    {id:2,zoom:true,src:'/donate/promtpay-qr.png',alt:'',text:'เลือกเมนูสแกน และ สแกน QR Code<br/>(กดที่รูปเพื่อ zoom)'},
     {id:3,zoom:false,src:'',alt:'',text:'เมื่อพบข้อความ<br/>ให้ธนาคารที่เกี่ยวข้องเปิดเผยข้อมูลรายการนี้ให้แก่กรมสรรพากร และ/หรือหน่วยรับบริจาคเพื่อการใช้สิทธิลดหย่อนภาษี<br/>ให้กดเลือกยอมรับ'},
     {id:4,zoom:false,src:'',alt:'',text:'ตรวจสอบ<br/>ชื่อบัญชี: โรงเรียนสามมุกคริสเตียนวิทยา<br/>หรือ<br/>เป๋าตุง เติมบุญ<br/>เลขผู้เสียภาษี: 0994000150822'},
     {id:5,zoom:false,src:'',alt:'',text:'ระบุลงในบันทึกว่า "บริจาคเพื่อการศึกษา"<br/>ระบุจำนวนเงินและกดยืนยัน'},
@@ -23,7 +23,7 @@
 
 <div class="page">
   <header class="flex flex-col justify-start items-center text-center">
-    <img src="/src/public/SCAlogo2023.png" alt="SCA logo" draggable="false" class="select-none">
+    <img src="/SCAlogo2023.png" alt="SCA logo" draggable="false" class="select-none">
     <span class="text-2xl">โรงเรียนสามมุกคริสเตียนวิทยา</span>
     <span>ขอเชิญชวนทุกท่าน</span>
     <div class="absolute top-1/2">
@@ -67,7 +67,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url(/src/images/donate/bg_donate.jpg) no-repeat center top;
+    background: url(/donate/bg_donate.jpg) no-repeat center top;
     background-size: cover;
     opacity: 0.15;
   }
