@@ -1,20 +1,21 @@
 <script>
   import logo from '$lib/assets/SCAlogo2023_small.png'
+  import { base } from '$app/paths';
 
   const links = [
     {text:'Home',href:'/home/'},
     {dropdown:true,text:'About',contents:[
-      {text:'General Information',href:'/about/'},
-      {text:'Our vision',href:'/about/vision/'},
-      {text:'School History',href:'/about/history/'},
-      {text:'Management Board',href:'/about/management/'}
+      {text:'General Information',href:`${base}/about/`},
+      {text:'Our vision',href:`${base}/about/vision/`},
+      {text:'School History',href:`${base}/about/history/`},
+      {text:'Management Board',href:`${base}/about/management/`}
     ]},
-    {text:'Contact',href:'/contact/'},
-    {text:'Admission',href:'/'},
+    {text:'Contact',href:`${base}/contact/`},
+    {text:'Admission',href:`${base}/`},
     {text:'Others',dropdown:true,dropdown_end:true,contents:[
-      {text:'Albums',href:'/'},
-      {text:'Donate',href:'/donate/'},
-      {text:'Student Council',href:'/'}
+      {text:'Albums',href:`${base}/`},
+      {text:'Donate',href:`${base}/donate/`},
+      {text:'Student Council',href:`${base}/`}
     ]},
   ]
 </script>

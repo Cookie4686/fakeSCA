@@ -1,5 +1,6 @@
 <script>
 	import Media from '../components/media.svelte';
+	import { base } from '$app/paths';
 	import logo from '$lib/assets/SCAlogo2023.png'
 </script>
 
@@ -21,8 +22,8 @@
 	</div>
 	<div class="flex justify-center">
 		<div class="btn-container inline-flex justify-center">
-			<a class="btn btn-1" href="/" target="_blank"><span>Photo Albums | ภาพกิจกรรม</span></a>
-			<a class="btn btn-2" href="/home/"><span>Home Page | เข้าสู่เว็บไซต์</span></a>
+			<a class="btn btn-1" href="{base}/" target="_blank"><span>Photo Albums | ภาพกิจกรรม</span></a>
+			<a class="btn btn-2" href="{base}/home/"><span>Home Page | เข้าสู่เว็บไซต์</span></a>
 		</div>
 	</div>
 	<Media></Media>
