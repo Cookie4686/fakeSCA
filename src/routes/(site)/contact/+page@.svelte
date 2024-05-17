@@ -69,7 +69,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url(/contact/bg_contact.webp) no-repeat center center;
+    background: url(/src/lib/assets/contact/bg_contact.webp) no-repeat center center;
     background-size: cover;
     opacity: 0.15;
   }

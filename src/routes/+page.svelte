@@ -1,5 +1,6 @@
 <script>
 	import Media from '../components/media.svelte';
+	import logo from '$lib/assets/SCAlogo2023.png'
 </script>
 
 <svelte:head>
@@ -9,7 +10,7 @@
 <main>
 	<div class="flex justify-center">
 		<div class="logo flex justify-center items-center">
-			<img src="/SCAlogo2023.png" alt="SCA logo" draggable="false" class="select-none" />
+			<img src={logo} alt="SCA logo" draggable="false" class="select-none" />
 		</div>
 	</div>
 	<div class="flex justify-center">
@@ -31,7 +32,7 @@
 	main {
 		min-height: 100vh;
 		padding-top: 5vh;
-		background: #1d2152 url(/bg.svg) no-repeat center bottom;
+		background: #1d2152 url(/src/lib/assets/bg.svg) no-repeat center bottom;
 		background-size: cover;
 		color: white;
 	}

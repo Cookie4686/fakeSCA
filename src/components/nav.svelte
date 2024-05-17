@@ -1,4 +1,6 @@
 <script>
+  import logo from '$lib/assets/SCAlogo2023_small.png'
+
   const links = [
     {text:'Home',href:'/home/'},
     {dropdown:true,text:'About',contents:[
@@ -23,7 +25,7 @@
 	<div class="logo relative w-max h-12 flex items-center">
     <div class="flex items-center h-full select-none">
       <img
-      src="/SCAlogo2023_small.png"
+      src={logo}
       alt="SCA logo"
       class="h-full"
       draggable="false"
