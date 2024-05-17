@@ -36,26 +36,13 @@
       </section>
     </main>
   </div>
-  <footer class="w-full py-8">
-    <ul>
-      <li class="link select-none">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Donate</a>
-        <a href="/">Student Council</a>
-        <a href="/">Albums</a>
-        <a href="/">Admission</a>
-      </li>
-    </ul>
-  </footer>
 </div>
 
 <style>
 	.site {
 		min-height: 100dvh;
 		display: grid;
-		grid-template-rows: 1fr auto;
+		grid-template-rows: 1fr;
 		grid-template-columns: minmax(0, 1fr);
 	}
 	.page {
@@ -74,19 +61,11 @@
     opacity: 0.15;
   }
   header {
-    min-height: 50vh;
+    min-height: 40vh;
     padding-top: var(--navheight);
   }
   header h1 {
     font-size: 2.5rem;
     font-weight: 600;
-  }
-  footer {
-    color: var(--primary);
-    background-color: var(--primary-opposite);
-    text-align: center;
-  }
-  footer .link a {
-    padding: 0 1.5rem;
   }
 </style>
