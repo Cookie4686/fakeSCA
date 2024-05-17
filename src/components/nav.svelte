@@ -3,7 +3,7 @@
   import { base } from '$app/paths';
 
   const links = [
-    {text:'Home',href:'/home/'},
+    {text:'Home',href:`${base}/home/`},
     {dropdown:true,text:'About',contents:[
       {text:'General Information',href:`${base}/about/`},
       {text:'Our vision',href:`${base}/about/vision/`},
