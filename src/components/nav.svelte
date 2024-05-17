@@ -2,9 +2,10 @@
   const links = [
     {text:'Home',href:'/home/'},
     {dropdown:true,text:'About',contents:[
-      {text:'Our vision',href:'/'},
-      {text:'School History',href:'/'},
-      {text:'Management Board',href:'/'}
+      {text:'General Information',href:'/about/'},
+      {text:'Our vision',href:'/about/vision/'},
+      {text:'School History',href:'/about/history/'},
+      {text:'Management Board',href:'/about/management/'}
     ]},
     {text:'Contact',href:'/contact/'},
     {text:'Admission',href:'/'},
@@ -251,7 +252,7 @@
       outline: none;
     }
   
-    nav .link a:focus::before,
+    nav .link a:focus-visible::before,
     nav .link a:hover::after,
     nav .link a:focus::after {
       width: 100%;

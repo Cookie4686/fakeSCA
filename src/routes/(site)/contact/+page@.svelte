@@ -62,15 +62,6 @@
 		--navheight: 5rem;
     position: relative;
 	}
-  footer {
-		color: var(--primary);
-		background-color: var(--primary-opposite);
-		text-align: center;
-	}
-	footer .link a {
-		padding: 0 1.5rem;
-	}
-
   .page::after {
     content: '';
     position: absolute;
@@ -83,23 +74,19 @@
     opacity: 0.15;
   }
   header {
-    min-height: 25vh;
+    min-height: 50vh;
     padding-top: var(--navheight);
   }
   header h1 {
     font-size: 2.5rem;
     font-weight: 600;
   }
-  main {
-    margin-top: 4.5rem;
+  footer {
+    color: var(--primary);
+    background-color: var(--primary-opposite);
     text-align: center;
   }
-  section {
-    margin-bottom: 4.5rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+  footer .link a {
+    padding: 0 1.5rem;
   }
 </style>

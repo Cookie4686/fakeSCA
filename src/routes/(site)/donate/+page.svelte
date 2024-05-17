@@ -52,10 +52,15 @@
 
 <style>
   .page {
-    padding-top: var(--navheight);
     overflow: hidden;
   }
-  .page::after {
+  header {
+    padding-top: var(--navheight);
+    min-height: 100vh;
+    font-size: 1.1rem;
+    position: relative;
+  }
+  header::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -65,10 +70,6 @@
     background: url(/src/images/donate/bg_donate.jpg) no-repeat center top;
     background-size: cover;
     opacity: 0.15;
-  }
-  header {
-    min-height: calc(100vh - var(--navheight));
-    font-size: 1.1rem;
   }
   header img {
     padding: 1.5rem;
@@ -80,19 +81,6 @@
     padding-top: 1rem;
   }
 
-  main {
-    padding-top: 2.5rem;
-    text-align: center;
-  }
-  section {
-    margin-bottom: 6rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
   .thank {
     font-size: 2rem;
     margin-bottom: 0.5rem;
